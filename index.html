@@ -3,20 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | mfwedding</title>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      UnityLoader.instantiate("unityContainer", "Build/mfwedding_final.json");
-    </script>
+    <title>Unity WebGL Player | Meikfanwedding2d</title>
   </head>
-  <body>
-      <div class="webgl-content" style="display: table; width: 100%; height: 100%;">
-          <div id="unityContainer"></div>
-      </div>
-
-      <script>var myWidth = innerWidth;
-          var myHeight = innerHeight;
-          document.getElementById("unityContainer").style.width = myWidth + "px";
-          document.getElementById("unityContainer").style.height = myHeight + "px";</script>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=800 height=1280 style="width: 800px; height: 1280px; background: #804237"></canvas>
+    <script src="Build/mfwedding2d.1.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/mfwedding2d.1.data.br",
+        frameworkUrl: "Build/mfwedding2d.1.framework.js.br",
+        codeUrl: "Build/mfwedding2d.1.wasm.br",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Meikfanwedding2d",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
   </body>
 </html>
